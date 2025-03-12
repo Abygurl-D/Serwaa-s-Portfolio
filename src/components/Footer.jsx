@@ -21,17 +21,17 @@ const Footer = () => {
     {
       name: "GitHub",
       icon: <FiGithub size={20} />,
-      url: "https://github.com/yourusername",
+      url: "https://github.com/Abygurl-D",
     },
     {
       name: "LinkedIn",
       icon: <FiLinkedin size={20} />,
-      url: "https://linkedin.com/in/yourusername",
+      url: "https://www.linkedin.com/in/abigail-debrah-a54024b0/",
     },
     {
       name: "Twitter",
       icon: <FiTwitter size={20} />,
-      url: "https://twitter.com/yourusername",
+      url: "https://x.com/AbbyDtheDev",
     },
     {
       name: "Email",

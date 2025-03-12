@@ -62,15 +62,15 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative w-full max-w-md mx-auto">
-              <div className="aspect-w-4 aspect-h-5 rounded-2xl overflow-hidden">
+            <div className="relative w-full max-w-md mx-auto h-[600px]">
+              <div className="relative w-full h-full rounded-2xl overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop&q=60"
+                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80"
                   alt="Serwaa"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
                 {/* Image Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#001F2D] via-transparent to-transparent opacity-50" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#001F2D] via-transparent to-transparent opacity-50 rounded-2xl" />
               </div>
               {/* Decorative Elements */}
               <div className="absolute -top-4 -left-4 w-24 h-24 border-4 border-[#00BFA6] rounded-xl -z-10" />

@@ -32,10 +32,10 @@ const Contact = () => {
 
     try {
       await emailjs.sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_n5nt97u",
+        "template_qskr5na",
         formRef.current,
-        "YOUR_PUBLIC_KEY"
+        "Lq7NTJyyF4EObyDjq"
       );
       setSuccess(true);
       setForm({ name: "", email: "", message: "" });
@@ -50,22 +50,22 @@ const Contact = () => {
     {
       name: "GitHub",
       icon: <FiGithub size={24} />,
-      url: "https://github.com/yourusername",
+      url: "https://github.com/Abygurl-D",
     },
     {
       name: "LinkedIn",
       icon: <FiLinkedin size={24} />,
-      url: "https://linkedin.com/in/yourusername",
+      url: "https://www.linkedin.com/in/abigail-debrah-a54024b0/",
     },
     {
       name: "Twitter",
       icon: <FiTwitter size={24} />,
-      url: "https://twitter.com/yourusername",
+      url: "https://x.com/AbbyDtheDev",
     },
     {
       name: "Email",
       icon: <FiMail size={24} />,
-      url: "mailto:your.email@example.com",
+      url: "mailto:thehairapist123@gmail.com",
     },
   ];
 
@@ -243,14 +243,24 @@ const Contact = () => {
                       <p className="text-gray-300">
                         Thank you for reaching out. I'll get back to you soon.
                       </p>
-                      <motion.button
-                        onClick={() => setSuccess(false)}
-                        className="mt-6 px-6 py-2 rounded-lg border border-[#00BFA6] text-[#00BFA6] hover:bg-[#00BFA6] hover:text-white transition-colors duration-300"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        Send Another Message
-                      </motion.button>
+                      <div className="flex gap-4 justify-center mt-6">
+                        <motion.button
+                          onClick={() => setSuccess(false)}
+                          className="px-6 py-2 rounded-lg border border-[#00BFA6] text-[#00BFA6] hover:bg-[#00BFA6] hover:text-white transition-colors duration-300"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          Send Another Message
+                        </motion.button>
+                        <motion.button
+                          onClick={() => setSuccess(false)}
+                          className="px-6 py-2 rounded-lg bg-[#00BFA6] text-white hover:bg-[#00A896] transition-colors duration-300"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          Close
+                        </motion.button>
+                      </div>
                     </div>
                   </motion.div>
                 )}
