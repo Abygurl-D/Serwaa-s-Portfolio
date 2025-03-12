@@ -5,81 +5,81 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const testimonialData = [
   {
-    name: "Sarah Johnson",
-    role: "Product Manager at TechCorp",
+    name: "Naa Shika Asante",
+    role: "C.E.O of Acquwaa Naturals",
     image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&auto=format&fit=crop&q=60",
+      "https://res.cloudinary.com/dmxzxo1fk/image/upload/v1741811305/nash_tdjsgj.webp",
     content:
       "Working with Serwaa was an absolute pleasure. Her attention to detail and creative problem-solving skills made our project a huge success.",
-    company: "TechCorp",
+    company: "Acquwaa Naturals",
   },
   {
-    name: "Michael Chen",
-    role: "CTO at InnovateLabs",
+    name: "Ralphael Gyambrah",
+    role: "Partner at Asarfo-Adjei Attorneys",
     image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop&q=60",
+      "https://res.cloudinary.com/dmxzxo1fk/image/upload/v1741811253/ralph_zhgabt.webp",
     content:
-      "Serwaa's expertise in modern web technologies and UI/UX design principles helped us transform our platform completely.",
-    company: "InnovateLabs",
+      "Serwaa's expertise in modern web technologies  helped us bring our vision to life.",
+    company: "Asarfo-Adjei Attorneys",
   },
   {
-    name: "Emma Williams",
-    role: "Creative Director at DesignStudio",
+    name: "Isaac Osei",
+    role: "C.E.O of Ike-Dian Fashion",
     image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&auto=format&fit=crop&q=60",
+      "https://res.cloudinary.com/dmxzxo1fk/image/upload/v1741811265/osei_y167vp.webp",
     content:
       "The level of professionalism and creativity that Serwaa brings to the table is exceptional. She's a true asset to any project.",
-    company: "DesignStudio",
+    company: "Ike-Dian Fashion",
   },
   {
-    name: "David Rodriguez",
-    role: "Lead Developer at WebTech",
+    name: "Calvin  Bekoe",
+    role: "Lead Developer at Camm Fusion",
     image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&auto=format&fit=crop&q=60",
+      "https://res.cloudinary.com/dmxzxo1fk/image/upload/v1741811278/calvin_osibo9.webp",
     content:
       "Her ability to write clean, efficient code while maintaining excellent user experience is remarkable. A true professional in every sense.",
-    company: "WebTech",
+    company: "Camm Fusion",
   },
   {
-    name: "Sophie Anderson",
-    role: "UI Designer at CreativeMinds",
+    name: "Mabel Hackman",
+    role: "Web Developer at Camm Fusion",
     image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=60",
+      "https://res.cloudinary.com/dmxzxo1fk/image/upload/v1741811287/mabel_asfn4r.webp",
     content:
       "Collaborating with Serwaa was inspiring. Her understanding of both design principles and technical implementation is rare to find.",
-    company: "CreativeMinds",
+    company: "Camm Fusion",
   },
   {
-    name: "James Wilson",
-    role: "Product Owner at TechStart",
+    name: "Jay Banner",
+    role: "Manager at Nacee Music",
     image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&auto=format&fit=crop&q=60",
+      "https://res.cloudinary.com/dmxzxo1fk/image/upload/v1741811242/Jay_lfh4qt.webp",
     content:
       "Serwaa delivered beyond our expectations. Her frontend expertise and attention to user experience transformed our application.",
-    company: "TechStart",
+    company: "Nacee Music",
   },
 ];
 
 const companyLogos = [
   {
-    name: "TechCorp",
-    logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&auto=format&fit=crop&q=60",
+    name: "Acquwaa Naturals",
+    logo: "https://res.cloudinary.com/dmxzxo1fk/image/upload/v1741208487/android-chrome-512x512_i2xrfj.png",
   },
   {
-    name: "InnovateLabs",
-    logo: "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=200&auto=format&fit=crop&q=60",
+    name: "Asarfo-Adjei Attorneys",
+    logo: "https://res.cloudinary.com/dmxzxo1fk/image/upload/v1741809986/vgb-images-2_esvoos.jpg",
   },
   {
-    name: "DesignStudio",
-    logo: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=200&auto=format&fit=crop&q=60",
+    name: "Ike-Dian Fashion",
+    logo: "https://res.cloudinary.com/dmxzxo1fk/image/upload/v1741700662/WhatsApp_Image_2025-03-11_at_13.39.58_mjgekn.jpg",
   },
   {
-    name: "WebTech",
-    logo: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=200&auto=format&fit=crop&q=60",
+    name: "Camm Fusion",
+    logo: "https://res.cloudinary.com/dmxzxo1fk/image/upload/v1741810540/DALL_E_2025-03-12_20.15.09_-_A_sleek_and_modern_logo_for_Camm_Fusion_a_web_development_company._The_design_features_a_fusion_of_abstract_digital_elements_such_as_interconnecte_zzwhwr.webp",
   },
   {
-    name: "CreativeMinds",
-    logo: "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=200&auto=format&fit=crop&q=60",
+    name: "Nacee Music",
+    logo: "https://res.cloudinary.com/dmxzxo1fk/image/upload/v1741810860/DALL_E_2025-03-12_20.20.33_-_A_bold_and_artistic_logo_for_Nacee_Music_a_modern_music_brand._The_design_features_a_combination_of_sleek_typography_and_iconic_musical_elements_li_usm0zt.webp",
   },
 ];
 

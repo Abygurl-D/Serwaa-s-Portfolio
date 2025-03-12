@@ -57,22 +57,22 @@ const StatsOverlay = () => {
   const stats = [
     {
       icon: FaBriefcase,
-      value: "3+",
+      value: "1+",
       title: "Years Experience",
     },
     {
       icon: FaCode,
-      value: "50+",
+      value: "10+",
       title: "Projects Completed",
     },
     {
       icon: FaSmile,
-      value: "30+",
+      value: "10+",
       title: "Satisfied Clients",
     },
     {
       icon: FaMedal,
-      value: "15+",
+      value: "5+",
       title: "Certifications",
     },
   ];
