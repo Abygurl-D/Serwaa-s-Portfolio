@@ -1,5 +1,5 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   FiGithub,
   FiLinkedin,
@@ -17,6 +17,15 @@ import {
 } from "react-icons/fi";
 
 const Footer = () => {
+  const [showToast, setShowToast] = useState(false);
+
+  const handleEmailClick = (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText("thehairapist123@gmail.com");
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 3000);
+  };
+
   const socialLinks = [
     {
       name: "GitHub",
@@ -36,7 +45,8 @@ const Footer = () => {
     {
       name: "Email",
       icon: <FiMail size={20} />,
-      url: "mailto:your.email@example.com",
+      url: "#",
+      onClick: handleEmailClick,
     },
   ];
 
@@ -55,6 +65,19 @@ const Footer = () => {
 
   return (
     <footer className="relative bg-gradient-to-b from-[#001F2D] to-[#001219] pt-16 pb-8">
+      <AnimatePresence>
+        {showToast && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 px-6 py-3 rounded-lg bg-[#00BFA6] text-white shadow-lg flex items-center gap-2"
+          >
+            <FiMail className="text-lg" />
+            <span>Email copied! You can now paste it in your email client</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
       {/* Decorative top border */}
       <div className="absolute top-0 left-0 right-0">
         <div className="h-px bg-gradient-to-r from-transparent via-[#00BFA6]/50 to-transparent" />
@@ -80,7 +103,8 @@ const Footer = () => {
                 <motion.a
                   key={index}
                   href={link.url}
-                  target="_blank"
+                  onClick={link.onClick}
+                  target={link.onClick ? "_self" : "_blank"}
                   rel="noopener noreferrer"
                   className="p-2.5 rounded-lg bg-[rgba(0,191,166,0.1)] text-[#00BFA6] hover:bg-[#00BFA6] hover:text-white transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,191,166,0.3)]"
                   whileHover={{ scale: 1.1 }}
@@ -132,13 +156,14 @@ const Footer = () => {
                 Accra, Ghana
               </div>
               <a
-                href="mailto:your.email@example.com"
+                href="#"
+                onClick={handleEmailClick}
                 className="flex items-center gap-3 text-gray-400 hover:text-[#00BFA6] transition-all duration-300 group"
               >
                 <span className="text-[#00BFA6]/70 group-hover:text-[#00BFA6] transition-colors duration-300">
                   <FiMail size={16} />
                 </span>
-                your.email@example.com
+                thehairapist123@gmail.com
               </a>
               <a
                 href="tel:+233123456789"

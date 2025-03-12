@@ -20,6 +20,14 @@ const Contact = () => {
   });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+
+  const handleEmailClick = (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText("thehairapist123@gmail.com");
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 3000);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -65,7 +73,8 @@ const Contact = () => {
     {
       name: "Email",
       icon: <FiMail size={24} />,
-      url: "mailto:thehairapist123@gmail.com",
+      url: "#",
+      onClick: handleEmailClick,
     },
   ];
 
@@ -74,6 +83,21 @@ const Contact = () => {
       id="contact"
       className="relative min-h-screen py-20 bg-gradient-to-b from-[#004D40] to-[#001F2D]"
     >
+      {/* Toast Notification */}
+      <AnimatePresence>
+        {showToast && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 px-6 py-3 rounded-lg bg-[#00BFA6] text-white shadow-lg flex items-center gap-2"
+          >
+            <FiMail className="text-lg" />
+            <span>Email copied! You can now paste it in your email client</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Background Pattern */}
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYtMi42ODYgNi02cy0yLjY4Ni02LTYtNi02IDIuNjg2LTYgNiAyLjY4NiA2IDYgNnptMCAwIiBzdHJva2U9IiMwMEJGQTYiIG9wYWNpdHk9Ii4yIi8+PC9nPjwvc3ZnPg==')] opacity-5" />
@@ -122,7 +146,8 @@ const Contact = () => {
                   <motion.a
                     key={index}
                     href={link.url}
-                    target="_blank"
+                    onClick={link.onClick}
+                    target={link.url === "#" ? "_self" : "_blank"}
                     rel="noopener noreferrer"
                     className="p-3 rounded-full bg-[rgba(0,191,166,0.1)] text-[#00BFA6] hover:bg-[#00BFA6] hover:text-white transition-colors duration-300"
                     whileHover={{ scale: 1.1 }}
