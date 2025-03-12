@@ -133,8 +133,8 @@ const About = () => {
             {/* Buttons */}
             <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
               <motion.a
-                href="/resume.pdf"
-                download
+                href="/Abigail-Debrah-Resume.pdf"
+                download="Abigail-Debrah-Resume.pdf"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#00BFA6] text-white hover:bg-[#00A896] transition-colors duration-300"
