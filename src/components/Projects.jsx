@@ -10,11 +10,11 @@ import {
 
 const projectsData = [
   {
-    title: "E-Commerce Platform",
+    title: "Acquwaa Naturals",
     description:
-      "A full-featured e-commerce platform with real-time inventory management and secure payment processing.",
+      "A full-featured e-commerce platform with real-time inventory management and secure payment processing for a natural hair care brand.",
     image:
-      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&auto=format&fit=crop&q=60",
+      "https://res.cloudinary.com/dmxzxo1fk/image/upload/v1741791998/aq_hero_ubrwr3.png",
     tech: ["React", "Node.js", "MongoDB", "Stripe"],
     liveLink: "https://serwaa-ecommerce.netlify.app",
     githubLink: "https://github.com/serwaa-portfolio/ecommerce",
