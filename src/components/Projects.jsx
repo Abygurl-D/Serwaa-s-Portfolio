@@ -15,65 +15,71 @@ const projectsData = [
       "A full-featured e-commerce platform with real-time inventory management and secure payment processing for a natural hair care brand.",
     image:
       "https://res.cloudinary.com/dmxzxo1fk/image/upload/v1741791998/aq_hero_ubrwr3.png",
-    tech: ["React", "Node.js", "MongoDB", "Stripe"],
-    liveLink: "https://serwaa-ecommerce.netlify.app",
-    githubLink: "https://github.com/serwaa-portfolio/ecommerce",
-    category: "Full Stack",
+    tech: ["React", "Framer Motion", "TailwindCSS", "JavaScript", "Paystack"],
+    liveLink: "https://acquwaa-naturals.netlify.app",
+    githubLink: "https://github.com/Abygurl-D/Acquwaa-Naturals-2",
+    category: ["Mobile", "Frontend"],
   },
   {
-    title: "AI Image Generator",
+    title: "Asarfo-Adjei Attorneys",
     description:
-      "An AI-powered image generation tool using state-of-the-art machine learning models.",
+      "A responsive and user-friendly website for a law firm that provides a range of legal services to clients.",
     image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop&q=60",
-    tech: ["Python", "TensorFlow", "React", "AWS"],
-    liveLink: "https://serwaa-ai-image.netlify.app",
-    githubLink: "https://github.com/serwaa-portfolio/ai-image",
-    category: "AI/ML",
+      "https://res.cloudinary.com/dmxzxo1fk/image/upload/v1741792215/law_jenbcg.png",
+    tech: [
+      "MUI",
+      "Framer Motion",
+      "React",
+      "JavaScript",
+      "Google Translate API",
+    ],
+    liveLink: "https://asarfo-adjei.netlify.app",
+    githubLink: "https://github.com/Abygurl-D/Asarfo-Adjei-Attorneys",
+    category: ["Mobile", "Frontend"],
   },
   {
-    title: "Social Media Dashboard",
+    title: "Ike-Dian Fashion",
     description:
-      "A comprehensive dashboard for social media analytics and content management.",
+      "A responsive and user-friendly website for a fashion brand that provides a range of fashion services to clients.",
     image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=60",
-    tech: ["Vue.js", "D3.js", "Firebase", "TailwindCSS"],
-    liveLink: "https://serwaa-dashboard.netlify.app",
-    githubLink: "https://github.com/serwaa-portfolio/dashboard",
-    category: "Frontend",
+      "https://res.cloudinary.com/dmxzxo1fk/image/upload/v1741792183/ik_csxodv.png",
+    tech: ["React", "Framer Motion", "JavaScript", "TailwindCSS", "Paystack"],
+    liveLink: "https://ikedian.netlify.app",
+    githubLink: "https://github.com/Abygurl-D/Ike-Dian-Fashion",
+    category: ["Frontend", "Mobile"],
   },
   {
-    title: "3D Portfolio Website",
+    title: "Serwaa's Portfolio",
     description:
       "A modern portfolio website with 3D animations and interactive elements.",
     image:
-      "https://images.unsplash.com/photo-1545235617-9465d2a55698?w=800&auto=format&fit=crop&q=60",
-    tech: ["React", "Three.js", "GSAP", "Framer Motion"],
+      "https://res.cloudinary.com/dmxzxo1fk/image/upload/v1741792355/new_q4se22.png",
+    tech: ["React", "Three.js", "JavaScript", "Framer Motion", "TailwindCSS"],
     liveLink: "https://serwaafolio.netlify.app",
-    githubLink: "https://github.com/serwaa-portfolio/portfolio",
-    category: "3D/Animation",
+    githubLink: "https://github.com/Abygurl-D/Serwaa-s-Portfolio",
+    category: ["3D/Animation", "Frontend", "Mobile"],
   },
   {
-    title: "Mobile Fitness App",
+    title: "Freelix",
     description:
-      "A cross-platform fitness application with workout tracking and social features.",
+      " Freelix is a Freelancer Management & Tracking System built to help freelancers manage projects, track time, send invoices, and receive payments easily.",
     image:
-      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&auto=format&fit=crop&q=60",
-    tech: ["React Native", "Redux", "Node.js", "MongoDB"],
-    liveLink: "https://serwaa-fitness.netlify.app",
-    githubLink: "https://github.com/serwaa-portfolio/fitness",
-    category: "Mobile",
+      "https://res.cloudinary.com/dmxzxo1fk/image/upload/v1741792111/freelix3_fztfre.png",
+    tech: ["React", "JavaScript", "MUI"],
+    liveLink: "https://freelix24.netlify.app",
+    githubLink: "https://github.com/FREELIX-PROJECT",
+    category: ["Full Stack", "Mobile"],
   },
   {
-    title: "Blockchain Explorer",
+    title: "Fusion Xpress",
     description:
-      "A blockchain explorer for tracking transactions and smart contracts.",
+      " FusionXpress is an advertising app designed to connect businesses with their target audience effectively.It delivers a clean, responsive, and user-friendly platform for creating and managing impactful advertisements",
     image:
-      "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&auto=format&fit=crop&q=60",
-    tech: ["React", "Web3.js", "Ethereum", "GraphQL"],
-    liveLink: "https://serwaa-blockchain.netlify.app",
-    githubLink: "https://github.com/serwaa-portfolio/blockchain",
-    category: "Blockchain",
+      "https://res.cloudinary.com/dmxzxo1fk/image/upload/v1741792145/fusionXpress_b6q9nk.png",
+    tech: ["React", "JavaScript", "TailwindCSS"],
+    liveLink: "https://fusionxpress.netlify.app/",
+    githubLink: "https://github.com/CAMM-FUSION/FusionXpress",
+    category: ["Full Stack", "Mobile"],
   },
 ];
 
@@ -185,13 +191,14 @@ const Projects = () => {
     "Full Stack",
     "Mobile",
     "3D/Animation",
-    "Blockchain",
   ];
 
   const filteredProjects =
     selectedCategory === "All"
       ? projectsData
-      : projectsData.filter((project) => project.category === selectedCategory);
+      : projectsData.filter((project) =>
+          project.category.includes(selectedCategory)
+        );
 
   const handleProjectClick = (e, project) => {
     e.preventDefault();
@@ -284,7 +291,7 @@ const Projects = () => {
               <div
                 className={`relative overflow-hidden rounded-2xl ${
                   darkMode ? "bg-[rgba(0,15,23,0.8)]" : "bg-white"
-                } backdrop-blur-xl border border-[#00BFA6]/20 shadow-[0_0_30px_rgba(0,191,166,0.15)] transition-all duration-500 group-hover:shadow-[0_0_50px_rgba(0,191,166,0.3)] group-hover:border-[#00BFA6]/40`}
+                } backdrop-blur-xl border border-[#00BFA6]/20 shadow-[0_0_30px_rgba(0,191,166,0.15)] transition-all duration-500 group-hover:shadow-[0_0_50px_rgba(0,191,166,0.3)] group-hover:border-[#00BFA6]/40 h-[450px]`}
               >
                 {/* Project Image */}
                 <div
@@ -301,7 +308,7 @@ const Projects = () => {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
+                <div className="p-6 h-[258px] flex flex-col">
                   <div className="flex items-center justify-between mb-4">
                     <button
                       onClick={() => setSelectedProject(project)}
@@ -357,16 +364,6 @@ const Projects = () => {
                       </span>
                     ))}
                   </div>
-
-                  <button
-                    onClick={() => setSelectedProject(project)}
-                    className="flex items-center gap-2 text-[#00BFA6] hover:text-[#00A896] hover:gap-3 transition-all duration-300 text-sm font-medium p-2 -ml-2 rounded-full hover:bg-[#00BFA6]/10 w-full"
-                  >
-                    <span className="flex items-center gap-2">
-                      View Details
-                      <FiArrowRight />
-                    </span>
-                  </button>
                 </div>
               </div>
             </motion.div>
