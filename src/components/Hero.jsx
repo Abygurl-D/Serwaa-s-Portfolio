@@ -91,7 +91,7 @@ const Hero = () => {
             className="absolute inset-0 bg-cover bg-center"
             style={{
               backgroundImage:
-                "url('https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=800&auto=format&fit=crop&q=60')",
+                "url('https://res.cloudinary.com/dmxzxo1fk/image/upload/v1741792234/me1_l2dg2a.jpg')",
               clipPath: "polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%)",
             }}
           >

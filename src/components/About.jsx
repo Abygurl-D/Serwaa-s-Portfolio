@@ -65,7 +65,7 @@ const About = () => {
             <div className="relative w-full max-w-md mx-auto h-[600px]">
               <div className="relative w-full h-full rounded-2xl overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=800&q=80"
+                  src="https://res.cloudinary.com/dmxzxo1fk/image/upload/v1741792162/hero.bg_rqqakm.jpg"
                   alt="Serwaa"
                   className="w-full h-full object-cover object-center"
                 />
