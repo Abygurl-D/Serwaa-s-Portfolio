@@ -1,6 +1,7 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { ThemeContext } from "../App";
 import {
   FiMail,
   FiGithub,
@@ -10,6 +11,7 @@ import {
 } from "react-icons/fi";
 
 const Contact = () => {
+  const { darkMode } = useContext(ThemeContext);
   const formRef = useRef();
   const [form, setForm] = useState({
     name: "",
@@ -85,7 +87,11 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="font-playfair text-4xl sm:text-5xl font-bold text-white mb-4">
+          <h2
+            className={`font-playfair text-4xl sm:text-5xl font-bold mb-4 ${
+              darkMode ? "text-white" : "text-[#001F2D]"
+            }`}
+          >
             Get in Touch
           </h2>
           <div className="w-20 h-1 bg-[#00BFA6] mx-auto" />

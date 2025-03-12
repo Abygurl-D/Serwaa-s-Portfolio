@@ -12,7 +12,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", to: "home" },
     { name: "About", to: "about" },
-    { name: "Experience", to: "experience" },
+    { name: "Skills", to: "skills" },
     { name: "Projects", to: "projects" },
     { name: "Contact", to: "contact" },
   ];
@@ -39,7 +39,7 @@ const Navbar = () => {
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
           ? darkMode
-            ? "bg-primary/90 backdrop-blur-sm"
+            ? "bg-[#001F2D]/90 backdrop-blur-sm"
             : "bg-white/90 backdrop-blur-sm shadow-lg"
           : "bg-transparent"
       }`}
@@ -55,7 +55,7 @@ const Navbar = () => {
           >
             <motion.h1
               className={`text-2xl font-playfair font-bold ${
-                darkMode ? "text-white-100" : "text-primary"
+                darkMode ? "text-white" : "text-[#001F2D]"
               }`}
               whileHover={{ scale: 1.05 }}
             >
@@ -72,9 +72,11 @@ const Navbar = () => {
                 smooth={true}
                 duration={500}
                 spy={true}
-                activeClass="text-violet-500"
-                className={`cursor-pointer hover:text-violet-500 transition-colors ${
-                  darkMode ? "text-white-100" : "text-primary"
+                activeClass="active-nav-link"
+                className={`cursor-pointer px-4 py-2 rounded-lg transition-all duration-300 ${
+                  darkMode
+                    ? "text-white hover:bg-[#00BFA6]/20"
+                    : "text-[#001F2D] hover:bg-[#00BFA6]/10"
                 }`}
               >
                 {link.name}
@@ -84,10 +86,10 @@ const Navbar = () => {
             {/* Theme Toggle */}
             <motion.button
               onClick={() => setDarkMode(!darkMode)}
-              className={`p-2 rounded-full ${
+              className={`p-2 rounded-full transition-colors duration-300 ${
                 darkMode
-                  ? "bg-tertiary text-white-100"
-                  : "bg-violet-100 text-violet-500"
+                  ? "bg-[#00BFA6]/20 text-[#00BFA6] hover:bg-[#00BFA6]/30"
+                  : "bg-[#00BFA6]/10 text-[#00BFA6] hover:bg-[#00BFA6]/20"
               }`}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -101,7 +103,7 @@ const Navbar = () => {
             <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={toggleMenu}
-              className={`p-2 ${darkMode ? "text-white-100" : "text-primary"}`}
+              className={darkMode ? "text-white" : "text-[#001F2D]"}
             >
               {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
             </motion.button>
@@ -117,8 +119,10 @@ const Navbar = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className={`md:hidden ${
-              darkMode ? "bg-primary" : "bg-white"
-            } border-t ${darkMode ? "border-tertiary" : "border-gray-100"}`}
+              darkMode ? "bg-[#001F2D]" : "bg-white"
+            } border-t ${
+              darkMode ? "border-[#00BFA6]/20" : "border-[#00BFA6]/10"
+            }`}
           >
             <div className="px-6 py-4 space-y-4">
               {navLinks.map((link, index) => (
@@ -128,9 +132,11 @@ const Navbar = () => {
                   smooth={true}
                   duration={500}
                   spy={true}
-                  activeClass="text-violet-500"
-                  className={`block cursor-pointer hover:text-violet-500 transition-colors ${
-                    darkMode ? "text-white-100" : "text-primary"
+                  activeClass="active-nav-link"
+                  className={`block cursor-pointer px-4 py-2 rounded-lg transition-all duration-300 ${
+                    darkMode
+                      ? "text-white hover:bg-[#00BFA6]/20"
+                      : "text-[#001F2D] hover:bg-[#00BFA6]/10"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
@@ -144,9 +150,11 @@ const Navbar = () => {
                   setDarkMode(!darkMode);
                   setIsOpen(false);
                 }}
-                className={`w-full text-left ${
-                  darkMode ? "text-white-100" : "text-primary"
-                } hover:text-violet-500 transition-colors`}
+                className={`w-full text-left px-4 py-2 rounded-lg transition-all duration-300 ${
+                  darkMode
+                    ? "text-white hover:bg-[#00BFA6]/20"
+                    : "text-[#001F2D] hover:bg-[#00BFA6]/10"
+                }`}
               >
                 {darkMode ? "Light Mode" : "Dark Mode"}
               </button>

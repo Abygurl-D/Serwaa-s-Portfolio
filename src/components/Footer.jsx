@@ -6,6 +6,14 @@ import {
   FiTwitter,
   FiMail,
   FiHeart,
+  FiHome,
+  FiUser,
+  FiCode,
+  FiFolder,
+  FiMessageCircle,
+  FiPhone,
+  FiMapPin,
+  FiAward,
 } from "react-icons/fi";
 
 const Footer = () => {
@@ -33,16 +41,20 @@ const Footer = () => {
   ];
 
   const footerLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "#home", icon: <FiHome size={16} /> },
+    { name: "About", href: "#about", icon: <FiUser size={16} /> },
+    { name: "Skills", href: "#skills", icon: <FiCode size={16} /> },
+    { name: "Projects", href: "#projects", icon: <FiFolder size={16} /> },
+    {
+      name: "Testimonials",
+      href: "#testimonials",
+      icon: <FiAward size={16} />,
+    },
+    { name: "Contact", href: "#contact", icon: <FiMessageCircle size={16} /> },
   ];
 
   return (
-    <footer className="relative bg-[#001F2D] pt-16 pb-8">
+    <footer className="relative bg-gradient-to-b from-[#001F2D] to-[#001219] pt-16 pb-8">
       {/* Decorative top border */}
       <div className="absolute top-0 left-0 right-0">
         <div className="h-px bg-gradient-to-r from-transparent via-[#00BFA6]/50 to-transparent" />
@@ -50,62 +62,19 @@ const Footer = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
           {/* Brand */}
-          <div className="space-y-4">
-            <h3 className="text-2xl font-playfair font-bold text-white">
-              Serwaa
-            </h3>
+          <div className="lg:col-span-4 space-y-6">
+            <div className="relative">
+              <h3 className="text-3xl font-playfair font-bold text-white">
+                Serwaa
+              </h3>
+              <div className="absolute -bottom-3 left-0 w-16 h-1 bg-gradient-to-r from-[#00BFA6] to-transparent rounded-full"></div>
+            </div>
             <p className="text-gray-400 leading-relaxed">
               Crafting beautiful digital experiences with modern web
               technologies.
             </p>
-          </div>
-
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">Quick Links</h4>
-            <ul className="space-y-2">
-              {footerLinks.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-gray-400 hover:text-[#00BFA6] transition-colors duration-300"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">Contact</h4>
-            <ul className="space-y-2">
-              <li className="text-gray-400">Accra, Ghana</li>
-              <li>
-                <a
-                  href="mailto:your.email@example.com"
-                  className="text-gray-400 hover:text-[#00BFA6] transition-colors duration-300"
-                >
-                  your.email@example.com
-                </a>
-              </li>
-              <li>
-                <a
-                  href="tel:+233123456789"
-                  className="text-gray-400 hover:text-[#00BFA6] transition-colors duration-300"
-                >
-                  +233 123 456 789
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Social Links */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">Follow Me</h4>
             <div className="flex gap-4">
               {socialLinks.map((link, index) => (
                 <motion.a
@@ -113,7 +82,7 @@ const Footer = () => {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-[rgba(0,191,166,0.1)] text-[#00BFA6] hover:bg-[#00BFA6] hover:text-white transition-colors duration-300"
+                  className="p-2.5 rounded-lg bg-[rgba(0,191,166,0.1)] text-[#00BFA6] hover:bg-[#00BFA6] hover:text-white transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,191,166,0.3)]"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -122,14 +91,74 @@ const Footer = () => {
               ))}
             </div>
           </div>
+
+          {/* Quick Links */}
+          <div className="lg:col-span-4">
+            <div className="relative mb-6">
+              <h4 className="text-xl font-playfair font-bold text-white">
+                Quick Links
+              </h4>
+              <div className="absolute -bottom-3 left-0 w-12 h-1 bg-gradient-to-r from-[#00BFA6] to-transparent rounded-full"></div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {footerLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.href}
+                  className="text-gray-400 hover:text-[#00BFA6] transition-all duration-300 flex items-center gap-3 group"
+                >
+                  <span className="text-[#00BFA6]/70 group-hover:text-[#00BFA6] transition-colors duration-300">
+                    {link.icon}
+                  </span>
+                  {link.name}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Contact Info */}
+          <div className="lg:col-span-4">
+            <div className="relative mb-6">
+              <h4 className="text-xl font-playfair font-bold text-white">
+                Contact Info
+              </h4>
+              <div className="absolute -bottom-3 left-0 w-12 h-1 bg-gradient-to-r from-[#00BFA6] to-transparent rounded-full"></div>
+            </div>
+            <div className="space-y-4">
+              <div className="flex items-center gap-3 text-gray-400 group">
+                <span className="text-[#00BFA6]/70">
+                  <FiMapPin size={16} />
+                </span>
+                Accra, Ghana
+              </div>
+              <a
+                href="mailto:your.email@example.com"
+                className="flex items-center gap-3 text-gray-400 hover:text-[#00BFA6] transition-all duration-300 group"
+              >
+                <span className="text-[#00BFA6]/70 group-hover:text-[#00BFA6] transition-colors duration-300">
+                  <FiMail size={16} />
+                </span>
+                your.email@example.com
+              </a>
+              <a
+                href="tel:+233123456789"
+                className="flex items-center gap-3 text-gray-400 hover:text-[#00BFA6] transition-all duration-300 group"
+              >
+                <span className="text-[#00BFA6]/70 group-hover:text-[#00BFA6] transition-colors duration-300">
+                  <FiPhone size={16} />
+                </span>
+                +233 123 456 789
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-[#00BFA6]/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm flex items-center gap-1">
-              © 2024 Serwaa. Made with <FiHeart className="text-[#00BFA6]" /> in
-              Ghana
+              © {new Date().getFullYear()} Serwaa. Made with{" "}
+              <FiHeart className="text-[#00BFA6]" /> in Ghana
             </p>
             <div className="flex items-center gap-6">
               <a

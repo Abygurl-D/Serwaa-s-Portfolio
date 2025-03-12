@@ -10,6 +10,8 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsOfService from "./components/TermsOfService";
+import Resume from "./components/Resume";
+import StatsOverlay from "./components/StatsOverlay";
 
 // Create theme context
 export const ThemeContext = createContext();
@@ -39,6 +41,7 @@ const App = () => {
                   <Navbar />
                   <Hero />
                   <About />
+                  <StatsOverlay />
                   <Skills />
                   <Projects />
                   <Testimonials />
@@ -50,6 +53,7 @@ const App = () => {
           />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfService />} />
+          <Route path="/resume" element={<Resume />} />
         </Routes>
       </BrowserRouter>
     </ThemeContext.Provider>

@@ -132,12 +132,6 @@ const Testimonials = () => {
     setCurrentIndex((prev) => (prev + 2) % testimonialData.length);
   };
 
-  const prevTestimonials = () => {
-    setCurrentIndex(
-      (prev) => (prev - 2 + testimonialData.length) % testimonialData.length
-    );
-  };
-
   useEffect(() => {
     const timer = setInterval(() => {
       nextTestimonials();
@@ -164,7 +158,11 @@ const Testimonials = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="font-playfair text-4xl sm:text-5xl font-bold text-white mb-4">
+          <h2
+            className={`font-playfair text-4xl sm:text-5xl font-bold mb-4 ${
+              darkMode ? "text-white" : "text-[#001F2D]"
+            }`}
+          >
             Client Testimonials
           </h2>
           <div className="w-20 h-1 bg-[#00BFA6] mx-auto" />
@@ -188,20 +186,6 @@ const Testimonials = () => {
               />
             </AnimatePresence>
           </div>
-
-          {/* Navigation Buttons */}
-          <button
-            className="absolute left-0 top-1/2 -translate-y-1/2 p-3 rounded-full bg-[rgba(0,15,23,0.8)] backdrop-blur-lg border border-[#00BFA6]/20 text-[#00BFA6] shadow-lg z-10 hover:bg-[#00BFA6] hover:text-white transition-colors duration-300"
-            onClick={prevTestimonials}
-          >
-            <FiChevronLeft size={24} />
-          </button>
-          <button
-            className="absolute right-0 top-1/2 -translate-y-1/2 p-3 rounded-full bg-[rgba(0,15,23,0.8)] backdrop-blur-lg border border-[#00BFA6]/20 text-[#00BFA6] shadow-lg z-10 hover:bg-[#00BFA6] hover:text-white transition-colors duration-300"
-            onClick={nextTestimonials}
-          >
-            <FiChevronRight size={24} />
-          </button>
         </div>
 
         {/* Company Logos */}
@@ -222,7 +206,9 @@ const Testimonials = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-2xl font-playfair font-bold text-white text-center mb-16"
+            className={`text-2xl font-playfair font-bold text-center mb-16 ${
+              darkMode ? "text-white" : "text-[#001F2D]"
+            }`}
           >
             Trusted By Industry Leaders
           </motion.h3>
@@ -240,35 +226,32 @@ const Testimonials = () => {
                   filter: "brightness(1.2)",
                   boxShadow: "0 0 30px rgba(0, 191, 166, 0.3)",
                 }}
-                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-[rgba(0,15,23,0.9)] to-[rgba(0,15,23,0.95)] backdrop-blur-xl border border-[#00BFA6]/10 p-8"
+                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-[rgba(0,15,23,0.9)] to-[rgba(0,15,23,0.95)] backdrop-blur-xl border border-[#00BFA6]/10 aspect-square"
               >
                 {/* Glow Effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#00BFA6]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute inset-0 bg-[#00BFA6] opacity-0 group-hover:opacity-10 blur-2xl transition-opacity duration-500" />
 
                 {/* Logo Container */}
-                <div className="relative">
+                <div className="relative h-full w-full p-4">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#00BFA6]/0 to-[#00BFA6]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <img
                     src={company.logo}
                     alt={company.name}
-                    className="h-12 w-auto mx-auto object-contain filter brightness-75 group-hover:brightness-100 transition-all duration-500"
+                    className="h-full w-full object-contain filter brightness-75 group-hover:brightness-100 transition-all duration-500"
                   />
-                </div>
 
-                {/* Company Name */}
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: 0.2 }}
-                  className="text-center text-sm text-[#00BFA6]/70 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                >
-                  {company.name}
-                </motion.p>
+                  {/* Company Name Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center bg-[rgba(0,15,23,0.8)] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <p className="text-[#00BFA6] text-lg font-medium">
+                      {company.name}
+                    </p>
+                  </div>
 
-                {/* Shine Effect */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                  <div className="absolute inset-0 transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-[#00BFA6]/10 to-transparent" />
+                  {/* Shine Effect */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                    <div className="absolute inset-0 transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-[#00BFA6]/10 to-transparent" />
+                  </div>
                 </div>
               </motion.div>
             ))}

@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { motion } from "framer-motion";
-import { FiDownload, FiCode, FiLayout, FiUsers } from "react-icons/fi";
+import { FiDownload, FiCode, FiLayout, FiUsers, FiEye } from "react-icons/fi";
+import { Link as ScrollLink } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
+import { ThemeContext } from "../App";
 
 const About = () => {
+  const { darkMode } = useContext(ThemeContext);
   const highlights = [
     {
       icon: <FiCode className="w-6 h-6" />,
@@ -24,7 +28,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative min-h-screen py-20 bg-gradient-to-b from-[#001F2D] to-[#004D40]"
+      className="relative min-h-screen py-20 pb-48 bg-gradient-to-b from-[#001F2D] to-[#004D40] z-10"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 w-full h-full">
@@ -39,7 +43,11 @@ const About = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="font-playfair text-4xl sm:text-5xl font-bold text-white mb-4">
+          <h2
+            className={`font-playfair text-4xl sm:text-5xl font-bold mb-4 ${
+              darkMode ? "text-white" : "text-[#001F2D]"
+            }`}
+          >
             About Me
           </h2>
           <div className="w-20 h-1 bg-[#00BFA6] mx-auto" />
@@ -81,15 +89,22 @@ const About = () => {
             className="space-y-8"
           >
             <div className="space-y-6">
-              <h3 className="font-playfair text-3xl sm:text-4xl font-bold text-white">
-                Frontend Developer
+              <h3
+                className={`text-3xl font-playfair font-bold ${
+                  darkMode ? "text-white" : "text-[#001F2D]"
+                }`}
+              >
+                Frontend Web Developer
               </h3>
-              <p className="text-lg text-gray-300 leading-relaxed">
-                I'm a passionate frontend developer with a keen eye for creating
-                beautiful, intuitive, and functional web experiences.
-                Specializing in modern JavaScript frameworks and UI/UX best
-                practices, I transform ideas into seamless digital experiences
-                that users love.
+              <p
+                className={`text-lg leading-relaxed ${
+                  darkMode ? "text-gray-300" : "text-gray-800"
+                }`}
+              >
+                I'm a passionate frontend developer focused on creating
+                beautiful, responsive, and user-friendly web applications. With
+                a strong foundation in modern web technologies, I bring designs
+                to life with clean code and smooth animations.
               </p>
             </div>
 
@@ -109,49 +124,35 @@ const About = () => {
                     <h4 className="text-lg font-medium text-white">
                       {item.title}
                     </h4>
-                    <p className="text-sm text-gray-400">{item.description}</p>
+                    <p className="text-sm text-gray-200">{item.description}</p>
                   </div>
                 </motion.div>
               ))}
             </div>
 
-            {/* Key Points */}
-            <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <span className="w-2 h-2 bg-[#00BFA6] rounded-full" />
-                <p className="text-gray-300">
-                  3+ years of experience in frontend development
-                </p>
-              </div>
-              <div className="flex items-center space-x-3">
-                <span className="w-2 h-2 bg-[#00BFA6] rounded-full" />
-                <p className="text-gray-300">
-                  Expertise in React, JavaScript, and modern web technologies
-                </p>
-              </div>
-              <div className="flex items-center space-x-3">
-                <span className="w-2 h-2 bg-[#00BFA6] rounded-full" />
-                <p className="text-gray-300">
-                  Strong focus on responsive design and performance optimization
-                </p>
-              </div>
-            </div>
-
-            {/* CTA Button */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-block"
-            >
-              <a
+            {/* Buttons */}
+            <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
+              <motion.a
                 href="/resume.pdf"
                 download
-                className="inline-flex items-center px-6 py-3 rounded-full text-lg font-medium bg-[#00BFA6] text-white hover:bg-[#00A896] transition-colors duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#00BFA6] text-white hover:bg-[#00A896] transition-colors duration-300"
               >
-                <FiDownload className="mr-2" />
+                <FiDownload className="text-lg" />
                 Download Resume
-              </a>
-            </motion.div>
+              </motion.a>
+              <RouterLink to="/resume">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="flex items-center gap-2 px-6 py-3 rounded-full border-2 border-[#00BFA6] text-[#00BFA6] hover:bg-[#00BFA6] hover:text-white transition-colors duration-300"
+                >
+                  <FiEye className="text-lg" />
+                  View Resume
+                </motion.button>
+              </RouterLink>
+            </div>
           </motion.div>
         </div>
       </div>
