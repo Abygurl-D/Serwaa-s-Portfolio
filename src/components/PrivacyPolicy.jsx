@@ -101,10 +101,10 @@ const PrivacyPolicy = () => {
                   If you have any questions about this Privacy Policy, please
                   contact us at{" "}
                   <a
-                    href="mailto:your.email@example.com"
+                    href="mailto:thehairapist123@gmail.com"
                     className="text-[#00BFA6] hover:text-white transition-colors duration-300"
                   >
-                    your.email@example.com
+                    thehairapist123@gmail.com
                   </a>
                 </p>
               </section>

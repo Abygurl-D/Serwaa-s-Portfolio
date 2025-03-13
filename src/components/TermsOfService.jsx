@@ -104,7 +104,7 @@ const TermsOfService = () => {
                     href="mailto:your.email@example.com"
                     className="text-[#00BFA6] hover:text-white transition-colors duration-300"
                   >
-                    your.email@example.com
+                    thehairapist123@gmail.com
                   </a>
                 </p>
               </section>
